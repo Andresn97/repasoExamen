@@ -7,6 +7,7 @@ export interface Persona{
     edad?:number,
     contrasena?:string,
     email?:string,
-    telefono?:string
+    telefono?:string,
+    urlFoto?:string
 
 }

@@ -7,7 +7,8 @@
         "edad": 25,
         "contrasena":"123456",
         "email":"andresc15@gmail.com",
-        "telefono":"2655515"
+        "telefono":"2655515",
+        "urlFoto": "/assets/icon/user.jpg"
     },
     {
         "nombre":"Mathias",
@@ -16,7 +17,8 @@
         "edad": 18,
         "contrasena":"mathi*123",
         "email":"minitatu@gmail.com",
-        "telefono":"2879845"
+        "telefono":"2879845",
+        "urlFoto": "/assets/icon/user.jpg"
     },
     {
         "nombre":"Esteban",
@@ -25,7 +27,8 @@
         "edad": 20,
         "contrasena":"esttorres*",
         "email":"esteban99t@hotmail.com",
-        "telefono":"2489753"
+        "telefono":"2489753",
+        "urlFoto": "/assets/icon/user.jpg"
     },
     {
         "nombre":"Nancy",
@@ -34,7 +37,8 @@
         "edad": 30,
         "contrasena":"nancy97a*",
         "email":"nancy87a@hotmail.com",
-        "telefono":"2881017"
+        "telefono":"2881017",
+        "urlFoto": "/assets/icon/user.jpg"
     },
     {
         "nombre":"María",
@@ -43,6 +47,7 @@
         "edad": 25,
         "contrasena":"maria*123",
         "email":"maria95torres@gmail.com",
-        "telefono":"2789410"
+        "telefono":"2789410",
+        "urlFoto": "/assets/icon/user.jpg"
     }
 ]

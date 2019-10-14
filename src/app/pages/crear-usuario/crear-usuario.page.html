@@ -35,8 +35,12 @@
                 </ion-item>
 
                 <ion-item>
-                    <ion-label position="floating">Edad:</ion-label>
-                    <ion-input type="number" name="edad" [(ngModel)]="usuario.edad"></ion-input>
+                    <!-- <ion-label position="floating">Edad:</ion-label> -->
+                    <ion-input type="text" name="urlFoto" [(ngModel)]="usuario.urlFoto" 
+                    placeholder="Url de la Foto" disabled="true" ></ion-input>
+                    <ion-button (click)="tomarFoto()" color="dark">
+                        Tomar Foto
+                    </ion-button>
                 </ion-item>
 
                 <ion-item>
@@ -47,7 +51,25 @@
                 <ion-item>
                     <ion-label position="floating">Teléfono:</ion-label>
                     <ion-input type="number" name="telefono" [(ngModel)]="usuario.telefono"></ion-input>
-                </ion-item>
+                </ion-item> <br>
+
+                <ion-item-divider>
+                    <ion-icon slot="start" name="md-images"></ion-icon>
+                    <ion-text slot="end" >
+                        <h6>Vista Previa de la Imagen</h6>
+                    </ion-text>
+                </ion-item-divider>
+
+                <div *ngIf=" usuario.urlFoto" >
+                    <ion-img [src]="usuario.urlFoto"></ion-img>
+                </div> <br>
+
+                <!-- <ng-template #agregarFoto>
+                    <ion-button (click)="tomarFoto()" expand="full"  >
+                        Tomar Foto
+                    </ion-button>
+                </ng-template> -->
+                
 
                 <ion-button type="submit" [disabled]="formulario.invalid" expand="full" color="dark">
                     Guardar

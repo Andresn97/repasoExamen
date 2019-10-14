@@ -4,6 +4,9 @@ import { PersonasService } from 'src/app/services/personas.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
+import { Plugins, CameraOptions, CameraSource, CameraResultType } from '@capacitor/core';
+const { Toast, Camera } = Plugins;
+
 @Component({
   selector: 'app-crear-usuario',
   templateUrl: './crear-usuario.page.html',
@@ -37,12 +40,10 @@ export class CrearUsuarioPage implements OnInit {
         edad: null,
         contrasena:'',
         email:'',
-        telefono:''
-        
+        telefono:'',
+        urlFoto: ''
       }
     }
-
-    
     
   }
 
@@ -51,28 +52,29 @@ export class CrearUsuarioPage implements OnInit {
     if( this.editar == true){
       this.personaService.editarUsuario( this.nombreUser, this.usuario );
       this.presentAlert("editó");
+      this.show( "editó" );
     } else{
       this.personaService.guardarUsuario(this.usuario);
       this.presentAlert("guardó");
+      this.show( "guardar" );
+
     }
 
     this.router.navigate([ "/usuarios" ]);
 
   }
 
+  async show( info:string ) {
+    await Toast.show({
+      text: 'Se' + info + 'correctamente a ' + this.usuario.nombreUsuario
+    });
+  }
+
   async presentAlert( info:string ) {
     const alert = await this.alertCtrl.create({
       header: 'Mensaje',
-      // subHeader: 'Subtitle',
       message: 'El usuario ' + this.usuario.nombreUsuario + " se " + info + " correctamente",
       buttons: [
-        // {
-        //   text: 'Cancelar',
-        //   role: 'cancel',
-        //   handler: (blah) => {
-        //     console.log('Se seleccionó Cancelar');
-        //   }
-        // },
          {
           text: 'Ok',
           handler: () => {
@@ -83,6 +85,18 @@ export class CrearUsuarioPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  async tomarFoto() {
+    const options: CameraOptions = {
+      quality: 90,
+      allowEditing: false,
+      source: CameraSource.Camera,
+      resultType: CameraResultType.Uri
+    }
+    const imagen = await Camera.getPhoto(options)
+
+    this.usuario.urlFoto = imagen.webPath
   }
 
 }

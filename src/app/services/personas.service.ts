@@ -32,7 +32,7 @@ export class PersonasService {
   }
 
   guardarUsuario( persona:Persona ){
-   this.usuarios.set(persona.nombreUsuario, persona);
+   this.usuarios.set(persona.nombreUsuario, this.validarFoto(persona));
   }
 
   editarUsuario( nombreUsuario:string, persona:Persona ){
@@ -46,6 +46,13 @@ export class PersonasService {
 
   buscarUsuario( nombreUsuario:string ){
     return this.usuarios.get( nombreUsuario);
+  }
+
+  public validarFoto(persona: Persona) {
+    if (!persona.urlFoto) {
+      persona.urlFoto = './assets/icon/user.jpg'
+    }
+    return persona
   }
 
 }

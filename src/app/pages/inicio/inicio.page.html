@@ -1,0 +1,59 @@
+<ion-header no-border>
+  <ion-toolbar color="danger">
+
+    <!-- <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="start" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+
+    <!-- <ion-buttons slot="start" color="dark"> -->
+      <ion-menu-button menu="first" color="dark" slot="start" ></ion-menu-button>
+    <!-- </ion-buttons> -->
+
+    <ion-title>Inicio Sesión</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <form #formulario="ngForm" (ngSubmit)="iniciarSesion()">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Inicio Sesión</ion-card-title><br>
+        <ion-img src="/assets/usuario.png"></ion-img>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario:</ion-label>
+          <ion-input type="text" 
+                      [(ngModel)]="usuario.nombreUsuario"
+                      name="nombreUsuario"
+                      required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Contraseña de Usuario:</ion-label>
+            <ion-input type="password" 
+                        [(ngModel)]="usuario.contrasena"
+                        name="contrasena"
+                        required></ion-input>
+          </ion-item> <br>
+
+          <ion-button type="submit"
+                    [disabled]="formulario.invalid"
+                    expand="full"
+                    color="dark">
+          Ingresar
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+  </form>
+
+
+</ion-content>

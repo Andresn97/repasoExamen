@@ -1,0 +1,22 @@
+<ion-menu menuId="first" side="start" contentId="principal">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Menú Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-item color="dark" detail routerLink="crear-usuario">
+          <ion-icon slot="start" name="person-add"></ion-icon>
+          <ion-label>Nuevo Usuario</ion-label>
+        </ion-item>
+        <ion-item color="dark" detail routerLink="usuarios">
+          <ion-icon slot="start" name="people"></ion-icon>
+          <ion-label>Lista de Usuarios</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>

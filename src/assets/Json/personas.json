@@ -1,0 +1,48 @@
+
+[
+    {
+        "nombre":"Andrés",
+        "apellido":"Cabrera",
+        "nombreUsuario":"andres70",
+        "edad": 25,
+        "contrasena":"123456",
+        "email":"andresc15@gmail.com",
+        "telefono":"2655515"
+    },
+    {
+        "nombre":"Mathias",
+        "apellido":"Tapia",
+        "nombreUsuario":"mathi01",
+        "edad": 18,
+        "contrasena":"mathi*123",
+        "email":"minitatu@gmail.com",
+        "telefono":"2879845"
+    },
+    {
+        "nombre":"Esteban",
+        "apellido":"Torres",
+        "nombreUsuario":"esteban99",
+        "edad": 20,
+        "contrasena":"esttorres*",
+        "email":"esteban99t@hotmail.com",
+        "telefono":"2489753"
+    },
+    {
+        "nombre":"Nancy",
+        "apellido":"Abril",
+        "nombreUsuario":"nancy87",
+        "edad": 30,
+        "contrasena":"nancy97a*",
+        "email":"nancy87a@hotmail.com",
+        "telefono":"2881017"
+    },
+    {
+        "nombre":"María",
+        "apellido":"Tapia",
+        "nombreUsuario":"maria95",
+        "edad": 25,
+        "contrasena":"maria*123",
+        "email":"maria95torres@gmail.com",
+        "telefono":"2789410"
+    }
+]
